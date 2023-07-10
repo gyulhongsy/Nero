@@ -1,0 +1,23 @@
+네로의 집:  
+- Scenes: NeroHouse 
+- Scripts(네로 움직임): PlayerMove0
+
+스테이지1-1&1-2(같이 있음)
+- Scenes: Chap12
+- Scripts(네로 움직임): PlayerMove12
+
+스테이지1-3:
+- Scenes: Chap3 
+- Scripts(네로 움직임): PlayerMove3
+
+스테이지4(운석피하기) 
+- Scenes: Chap4 
+- Scripts(네로 움직임): spaceMove
+
+고양이별:
+- Scenes: CatPlanet 
+
+
+안 쓰는 씬 (나중에 지움):
+- Scenes: Temp1, Temp2
+- Scripts: PlayerMove
