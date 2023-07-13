@@ -20,4 +20,3 @@
 
 안 쓰는 씬 (나중에 지움):
 - Scenes: Temp1, Temp2
-- Scripts: PlayerMove
