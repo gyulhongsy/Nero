@@ -1,14 +1,14 @@
 네로의 집:  
 - Scenes: NeroHouse 
-- Scripts(네로 움직임): PlayerMove0
+- Scripts(네로 움직임): PlayerMove
 
 스테이지1-1&1-2(같이 있음)
 - Scenes: Chap12
-- Scripts(네로 움직임): PlayerMove12
+- Scripts(네로 움직임): PlayerMove
 
 스테이지1-3:
 - Scenes: Chap3 
-- Scripts(네로 움직임): PlayerMove3
+- Scripts(네로 움직임): PlayerMove
 
 스테이지4(운석피하기) 
 - Scenes: Chap4 
