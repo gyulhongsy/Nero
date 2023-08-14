@@ -7,6 +7,8 @@ public class PlayerMove : MonoBehaviour
     public float maxSpeed;
     Rigidbody2D rigid;
     SpriteRenderer spriteRenderer;
+    Animator anim;
+
     public float jumpPower;
     //Mobile key var
     int left_Value;
@@ -21,14 +23,16 @@ public class PlayerMove : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
     {
         //PC
         //Jump
-        if (Input.GetButtonDown("Jump")) {
+        if (Input.GetButtonDown("Jump") && !anim.GetBool("isJumping")) {
             rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
+            anim.SetBool("isJumping", true);
         }
         //Stop Speed
         if (Input.GetButtonUp("Horizontal")) {
@@ -42,8 +46,9 @@ public class PlayerMove : MonoBehaviour
 
         //Moblie
         //Jump
-        if (up_down) {
+        if (up_down && !anim.GetBool("isJumping")) {
             rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
+            anim.SetBool("isJumping", true);
         }
         //Stop Speed
         if (right_Up && left_Up) {
@@ -60,6 +65,12 @@ public class PlayerMove : MonoBehaviour
         right_down = false;
         left_Up = false;
         right_Up = false;
+
+
+        if (Mathf.Abs(rigid.velocity.x) < 0.3)
+            anim.SetBool("isWalking", false);
+        else
+            anim.SetBool("isWalking", true);
     }
     void FixedUpdate()
     {
@@ -78,6 +89,17 @@ public class PlayerMove : MonoBehaviour
             rigid.velocity = new Vector2(maxSpeed, rigid.velocity.y);
         else if (rigid.velocity.x < maxSpeed * (-1)) //Left Max Speed
             rigid.velocity = new Vector2(maxSpeed * (-1), rigid.velocity.y);
+
+        //Landing Platform
+        if (rigid.velocity.y < 0)
+        {
+            RaycastHit2D rayHit = Physics2D.Raycast(rigid.position, Vector3.down, 1, LayerMask.GetMask("Platforms"));
+            if (rayHit.collider != null)
+            {
+                if (rayHit.distance < 0.5f)
+                    anim.SetBool("isJumping", false);
+            }
+        }
     }
     //Mobile
     public void ButtonDown(string type)
