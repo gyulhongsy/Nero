@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/End.unity
     guid: 6537cb3c6efd43046bffa8876fd1efb3
   - enabled: 1
-    path: Assets/Scenes/Chap12.unity
-    guid: d485a7d398ef7934aa50cd0f4ba15e56
+    path: Assets/Scenes/NeroHouse.unity
+    guid: a0faf0e40c80d5d4dbf028c6680b8df2
+  - enabled: 1
+    path: Assets/Scenes/Title.unity
+    guid: 32dd77022ec4b7f4bbd3c0e3827dc909
   m_configObjects: {}

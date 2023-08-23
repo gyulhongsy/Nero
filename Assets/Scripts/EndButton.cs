@@ -13,8 +13,8 @@ public class EndButton : MonoBehaviour
     // 처음부터 버튼 함수
     public void SceneChangeButton()
     {
-        SceneManager.LoadScene("Chap12");   // 임시 전환. 추후 삭제
-        //SceneManager.LoadScene("시작화면씬 이름");
+        //SceneManager.LoadScene("Chap12");   // 임시 전환. 추후 삭제
+        SceneManager.LoadScene("Title");
         Debug.Log("처음으로 이동");
     }
 
