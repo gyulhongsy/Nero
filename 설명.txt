@@ -1,21 +1,100 @@
+* 간략한 설명. 참고 바람. 빠진 부분 있을 수 있음. 변경될 수 있음*
+
 네로의 집:  
 - Scenes: NeroHouse 
-- Scripts(네로 움직임): PlayerMove
+- Scripts:
+	- [네로 움직임]: PlayerMove
+	- [네로 자동 움직임]: PlayerMoveAuto
+	- [가방 획득 관련]: Bag_Pick
+	- [쥐 자동 움직임]: MouseMove
+	- [가방 인벤 관련]: Bag1
+- Tag:
+	- [아이템 획득 오브젝트]: Item
+- Layer:	
+	- [발판]: Platforms
+	
 
 스테이지1-1&1-2(같이 있음)
-- Scenes: Chap12
-- Scripts(네로 움직임): PlayerMove
+- Scenes: Chap12 
+- Scripts:
+	- [네로 움직임]: PlayerMove
+	- [아이템 획득 관련]: Item_Pick
+	- [아이템 주는 오브젝트 관련]: GetItem
+	- [새 자동 움직임]: BirdMove
+	- [가방 인벤 관련]: Bag2
+	- [아이템 주기 관련]: GiveItem
+	- [여자아이 움직임 관련]: GirlMove
+	- [여자아이 부모 움직임 관련]: GirlParentMove
+	- [신호등 관련]: Teleport, Traffic
+- Tag:
+	- [아이템 획득 오브젝트]: Item
+	- [아이템 주는 오브젝트 관련]: GetItem
+	- [네로(Player)]: Player
+- Layer:	
+	- [발판]: Platforms
+	- [네로(Player)]: Player
+
 
 스테이지1-3:
 - Scenes: Chap3 
-- Scripts(네로 움직임): PlayerMove
+- Scripts:
+	- [네로 움직임]: PlayerMove
+	- [네로 잡힘 움직임]: PlayerDamage
+	- [가방 인벤 관련]: Bag3
+	- [캣잎상점아줌마 움직임]: StoreCatMove
+	- [고양이1 움직임]: DizzyCatMove1
+	- [고양이2 움직임]: DizzyCatMove2
+	- [고양이3 움직임]: DizzyCatMove3
+	- [고양이4 움직임]: DizzyCatMove4
+	- [고양이5 움직임]: DizzyCatMove5
+	- [고양이6 움직임]: DizzyCatMove6
+- Tag:
+	- [아이템 획득 오브젝트]: Item
+	- [아이템 주는 오브젝트 관련]: GetItem
+	- [네로(Player)]: Player
+	- [고양이1~6]: DizzyCat
+	- [캣잎상점아줌마]: StoreCat
+- Layer:	
+	- [발판]: Platforms
+	- [네로(Player)]: Player
+
 
 스테이지4(운석피하기) 
 - Scenes: Chap4 
-- Scripts(네로 움직임): spaceMove
+- Scripts:
+	- [네로 움직임]: spaceMove
+
 
 고양이별:
 - Scenes: CatPlanet 
+- Scripts:
+	- [네로 자동 움직임]: PlayerMoveAuto2
+	- [맨홀 자동 움직임]: ManholeMove
+	- [네로 엄마 자동 움직임]: NeroMomMove
+	- [네로 아빠 자동 움직임]: NeroDadMove
+- Layer:	
+	- [발판]: Platforms
+
+
+시작 화면:
+-Scenes: Title
+- Scripts:
+	- TitleScene
+
+
+끝 화면: 
+-Scenes: End
+- Scripts:
+	- EndButton
+
+
+대사 관련: 
+- Scripts:
+	- playerAction
+	- DalogueManager
+	- SelectObjectManager
+	- TalkManager
+
 
 
 안 쓰는 씬 (나중에 지움):
