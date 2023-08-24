@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -19,11 +20,23 @@ public class PlayerMove : MonoBehaviour
     bool left_Up;
     bool right_Up;
 
+    //스테이지 전환용
+    public List<string> nextStageNames = new List<string> { "NeroHouse", "Chap12", "Chap3", "Chap4", "CatPlanet" }; // 초기 스테이지 이름 리스트
+    private bool nextStage = false;
+    private int nextStageIndex = 0;
+    private int currentStageIndex = 0;
+
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+    }
+    void Start()
+    {
+        // 현재 스테이지의 인덱스를 찾아냅니다.
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        currentStageIndex = nextStageNames.IndexOf(currentSceneName);
     }
 
     void Update()
@@ -59,6 +72,11 @@ public class PlayerMove : MonoBehaviour
         {
             spriteRenderer.flipX = (right_Value + left_Value) == 1;
         }
+
+        //스테이지 전환용
+        string currentSceneName = SceneManager.GetActiveScene().name;
+        currentStageIndex = nextStageNames.IndexOf(currentSceneName);
+
         //Mobile Var Init
         up_down = false;
         left_down = false;
@@ -134,5 +152,23 @@ public class PlayerMove : MonoBehaviour
                 right_Up = true;
                 break;
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("warmHole"))
+        {
+            nextStage = true;
+            LoadNextStage();
+        }
+    }
+
+    void LoadNextStage()
+    {
+        // 다음 스테이지 인덱스를 계산합니다.
+        int nextStageIndex = (currentStageIndex + 1) % nextStageNames.Count;
+
+        string nextStageName = nextStageNames[nextStageIndex];
+        SceneManager.LoadScene(nextStageName);
     }
 }
