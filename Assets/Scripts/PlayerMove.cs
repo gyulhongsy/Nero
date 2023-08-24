@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
@@ -31,6 +32,7 @@ public class PlayerMove : MonoBehaviour
     float detectRange = 2.0f;
     GameObject scanObject;
 
+    // ¥Î»≠√¢
     public DialogueManager manager;
 
     void Awake()

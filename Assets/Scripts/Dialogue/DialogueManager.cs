@@ -20,6 +20,13 @@ public class DialogueManager : MonoBehaviour
     GameObject cat5; // Ä¹ÀÙ °í¾çÀÌ5
     GameObject cat6; // Ä¹ÀÙ °í¾çÀÌ6
 
+    // public GameObject obj;
+    public Text talkText;
+    public Text talkerText;
+
+    public bool isAction;
+    public int talkIndex;
+
     void Start()
     {
         if (SceneManager.GetActiveScene().name == "NeroHouse")
@@ -44,15 +51,7 @@ public class DialogueManager : MonoBehaviour
             cat5 = GameObject.Find("cat5");
             cat6 = GameObject.Find("cat6");
         }
-
     }
-
-    // public GameObject obj;
-    public Text talkText;
-    public Text talkerText;
-
-    public bool isAction;
-    public int talkIndex;
 
     public void Action(string name)
     {
@@ -141,7 +140,7 @@ public class DialogueManager : MonoBehaviour
         }
 
 
-        talkText.text = talkData;
+        StartCoroutine(Typing(talkData));
 
         switch (id)
         {
@@ -228,5 +227,15 @@ public class DialogueManager : MonoBehaviour
 
         isAction = true;
         talkIndex++;
+    }
+
+    IEnumerator Typing(string text)
+    {
+        talkText.text = "";
+        foreach (char letter in text.ToCharArray())
+        {
+            talkText.text += letter;
+            yield return new WaitForSeconds(0.05f);
+        }
     }
 }
