@@ -203,8 +203,6 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    /*
-     * 오류 때문에 잠시 주석 처리 해뒀습니다 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("warmHole"))
@@ -213,7 +211,6 @@ public class PlayerMove : MonoBehaviour
             LoadNextStage();
         }
     }
-    */
 
     void LoadNextStage()
     {

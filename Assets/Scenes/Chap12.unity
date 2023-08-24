@@ -3884,7 +3884,8 @@ GameObject:
   - component: {fileID: 1270117593}
   - component: {fileID: 1270117592}
   - component: {fileID: 1270117595}
-  m_Layer: 0
+  - component: {fileID: 1270117596}
+  m_Layer: 3
   m_Name: missingGirl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3996,6 +3997,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccc4584c820a6ab47bfe142fb14c009c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &1270117596
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270117591}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1279501050
 GameObject:
   m_ObjectHideFlags: 0
@@ -4213,6 +4235,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSpeed: 4
   jumpPower: 16
+  nextStageNames:
+  - NeroHouse
+  - Chap12
+  - Chap3
+  - Chap4
+  - CatPlanet
+  manager: {fileID: 804747872}
 --- !u!95 &1337019222
 Animator:
   serializedVersion: 4
@@ -5075,7 +5104,8 @@ GameObject:
   - component: {fileID: 1544078593}
   - component: {fileID: 1544078592}
   - component: {fileID: 1544078591}
-  m_Layer: 0
+  - component: {fileID: 1544078594}
+  m_Layer: 3
   m_Name: mr.drunken
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5175,6 +5205,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1544078594
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544078590}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1590271073
 GameObject:
   m_ObjectHideFlags: 0
@@ -5629,51 +5680,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1924189053
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1924189055}
-  - component: {fileID: 1924189054}
-  m_Layer: 0
-  m_Name: SelectObjectManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1924189054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1924189053}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96182c9a62514c0498fbc73ee6239f08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  manager: {fileID: 804747872}
---- !u!4 &1924189055
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1924189053}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.248591, y: -6.462052, z: -0.08016105}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1952113171
 GameObject:
