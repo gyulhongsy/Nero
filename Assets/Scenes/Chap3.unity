@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 34315010}
   - component: {fileID: 34315012}
   - component: {fileID: 34315013}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: cat2
   m_TagString: DizzyCat
   m_Icon: {fileID: 0}
@@ -609,51 +609,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!1 &297448848
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 297448850}
-  - component: {fileID: 297448849}
-  m_Layer: 0
-  m_Name: SelectObjectManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &297448849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 297448848}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96182c9a62514c0498fbc73ee6239f08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  manager: {fileID: 1489073660}
---- !u!4 &297448850
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 297448848}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.248591, y: -6.462052, z: -0.08016105}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 20
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &338660825
 GameObject:
   m_ObjectHideFlags: 0
@@ -885,6 +840,7 @@ MonoBehaviour:
   - Chap3
   - Chap4
   - CatPlanet
+  manager: {fileID: 1489073660}
 --- !u!95 &342381056
 Animator:
   serializedVersion: 4
@@ -1943,7 +1899,7 @@ GameObject:
   - component: {fileID: 937304024}
   - component: {fileID: 937304026}
   - component: {fileID: 937304027}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: cat4
   m_TagString: DizzyCat
   m_Icon: {fileID: 0}
@@ -2080,7 +2036,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1000945458}
   - component: {fileID: 1000945457}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: cats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2100,7 +2056,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -2.5, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2111,7 +2067,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 9, y: 1}
   m_EdgeRadius: 0
 --- !u!4 &1000945458
 Transform:
@@ -3689,7 +3645,7 @@ GameObject:
   - component: {fileID: 1423521952}
   - component: {fileID: 1423521951}
   - component: {fileID: 1423521953}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: storeCat
   m_TagString: StoreCat
   m_Icon: {fileID: 0}
@@ -4025,7 +3981,7 @@ GameObject:
   - component: {fileID: 1499931343}
   - component: {fileID: 1499931345}
   - component: {fileID: 1499931346}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: cat5
   m_TagString: DizzyCat
   m_Icon: {fileID: 0}
@@ -4165,7 +4121,7 @@ GameObject:
   - component: {fileID: 1512996238}
   - component: {fileID: 1512996240}
   - component: {fileID: 1512996241}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: cat6
   m_TagString: DizzyCat
   m_Icon: {fileID: 0}
@@ -4648,7 +4604,7 @@ GameObject:
   - component: {fileID: 1674529170}
   - component: {fileID: 1674529172}
   - component: {fileID: 1674529173}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: cat3
   m_TagString: DizzyCat
   m_Icon: {fileID: 0}
@@ -5281,7 +5237,7 @@ GameObject:
   - component: {fileID: 2001299809}
   - component: {fileID: 2001299811}
   - component: {fileID: 2001299812}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: cat1
   m_TagString: DizzyCat
   m_Icon: {fileID: 0}
