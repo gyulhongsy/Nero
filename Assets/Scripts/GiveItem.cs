@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 
 public class GiveItem : MonoBehaviour, IPointerClickHandler
 {
-    public DialogueManager manager;
+    public EventDialogue eventDialogue;
 
     public GameObject player;   // 네로 오브젝트
     public GameObject bagInven;      // 가방 인벤토리
@@ -21,11 +21,6 @@ public class GiveItem : MonoBehaviour, IPointerClickHandler
     public Boolean giveD = false;       // 음료 전달 가능 여부
     public Boolean finishD = false;     // 음료 전달 완료 여부
 
-    void Start()
-    {
-        
-    }
-
     void Arrive()   // 아저씨 or 여자아이에게 도착 시 함수
     {
         // 아저씨 위치에 도착 시 숙취제 전달 가능
@@ -33,7 +28,7 @@ public class GiveItem : MonoBehaviour, IPointerClickHandler
         {
             if(player.transform.position.y <= 2f)
             {
-                Debug.Log("아저씨 닿음");
+                // Debug.Log("아저씨 닿음");
                 giveH = true;
 
             }
@@ -76,7 +71,8 @@ public class GiveItem : MonoBehaviour, IPointerClickHandler
             ivenHangover.SetActive(false);  // 숙취제 사라짐 
             bag.GetComponent<Bag2>().isBagOpen = false;     // 가방 열림 확인 변수 false
             bagInven.SetActive(false);   // 가방 인벤닫기
-            manager.Action("mr.drunken event");
+
+            eventDialogue.StartEvent(17, "mr.drunken event");
         }
         if (giveD)  // 음료 전달 가능
         {
@@ -85,7 +81,8 @@ public class GiveItem : MonoBehaviour, IPointerClickHandler
             ivenDrink.SetActive(false); // 음료 사라짐
             bag.GetComponent<Bag2>().isBagOpen = false;     // 가방 열림 확인 변수 false
             bagInven.SetActive(false);   // 가방 인벤닫기
-            manager.Action("missingGirl event");
+
+            eventDialogue.StartEvent(10, "missingGirl event");
         }
     }
 }

@@ -78,7 +78,7 @@ public class DialogueManager : MonoBehaviour
                 Talk(210, 200);
                 break;
             case "mr.drunken event":
-                Talk(211, 200);
+                Talk(211, 0);
                 break;
             case "missingGirl":
                 Talk(310, 210);
@@ -103,15 +103,6 @@ public class DialogueManager : MonoBehaviour
     {
         string talkData = talkManager.GetTalk(id, talkIndex);
         string talkerData = talkManager.GetTalker(talkerId);
-
-
-        // scene1
-        if (id == 120 && talkIndex == 25)    // ÇÒ¾Æ¹öÁö°¡ °¡¹æ ÁÜ
-        {
-
-            Debug.Log("°¡¹æ È¹µæ");
-            bag.SetActive(true);
-        }
 
         // scene2
         if (id == 311 && talkData == null)  // ¿©ÀÚ¾ÆÀÌ »ç¶óÁü
@@ -159,6 +150,12 @@ public class DialogueManager : MonoBehaviour
                     talkerText.text = talkManager.GetTalker(0);
                 else
                     talkerText.text = talkerData;
+
+                if (talkIndex == 25)
+                {
+                    Debug.Log("°¡¹æ È¹µæ");
+                    bag.SetActive(true);
+                }
                 break;
             case 210:
                 if (talkIndex == 1)
@@ -235,7 +232,7 @@ public class DialogueManager : MonoBehaviour
         foreach (char letter in text.ToCharArray())
         {
             talkText.text += letter;
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.03f);
         }
     }
 }

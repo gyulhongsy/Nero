@@ -63,7 +63,7 @@ public class PlayerMove : MonoBehaviour
             rigid.velocity = new Vector2(rigid.velocity.normalized.x * 0.5f, rigid.velocity.y);
         }
         //Direction Sprite
-        if (Input.GetButton("Horizontal"))
+        if (manager.isAction == false && Input.GetButton("Horizontal"))
         {
             spriteRenderer.flipX = Input.GetAxisRaw("Horizontal") == 1;
 
@@ -116,7 +116,7 @@ public class PlayerMove : MonoBehaviour
     {
         //PC
         //Move Speed
-        float h = Input.GetAxisRaw("Horizontal");
+        float h = manager.isAction? 0 :Input.GetAxisRaw("Horizontal");
         rigid.AddForce(Vector2.right * h, ForceMode2D.Impulse);
 
         //Mobile
@@ -168,7 +168,6 @@ public class PlayerMove : MonoBehaviour
                 manager.Action(scanObject.name);
             }
         }
-
     }
     //Mobile
     public void ButtonDown(string type)
