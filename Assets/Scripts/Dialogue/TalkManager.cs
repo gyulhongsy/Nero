@@ -91,6 +91,20 @@ public class TalkManager : MonoBehaviour
         "ㅎㅎ 재밌지? 이제 이 구슬은 내가 가질게.", "아 안돼요! (얼른 도망가야해)"
         });
 
+        // 에너지 구슬 합체
+        talkData.Add(500, new string[] { "엇 이거 아까 아저씨한테 받은 거랑 비슷하게 생긴 것 같은데..?",
+        "한번 합쳐볼까?"
+        });
+
+        // 스테이지 4
+        talkData.Add(600, new string[] { "여긴 어디지? 우주인가?", "저건…운석?! 운석이 날라온다. 피해야 돼!"
+        });
+
+        // 결말
+        talkData.Add(700, new string[] { "여긴 뭐지?", "엄마..? 아빠..?",
+        "네로..? 네로니 ? !!!", "엄마!!아빠!!너무 너무 보고 싶었어요",
+        "정말 네로구나!", "정말 보고 싶었다 네로야!" });
+
         // Talker Data
         talkerData[0] = "네로";
 
@@ -117,7 +131,9 @@ public class TalkManager : MonoBehaviour
         talkerData[225] = "캣잎에 취한 고양이6";
         talkerData[226] = "캣잎 상점 아줌마";
 
-
+        talkerData[300] = "네로의 엄마 & 아빠";
+        talkerData[301] = "네로 엄마";
+        talkerData[302] = "네로 아빠";
     }
 
     public string GetTalk(int id, int talkIndex)

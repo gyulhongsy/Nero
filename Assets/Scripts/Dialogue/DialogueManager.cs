@@ -208,6 +208,16 @@ public class DialogueManager : MonoBehaviour
                 else
                     talkerText.text = talkerData;
                 break;
+            case 700:
+                if (talkIndex == 2)
+                    talkerText.text = talkManager.GetTalker(300);
+                else if (talkIndex == 4)
+                    talkerText.text = talkManager.GetTalker(301);
+                else if (talkIndex == 5)
+                    talkerText.text = talkManager.GetTalker(302);
+                else
+                    talkerText.text = talkerData;
+                break;
             default:
                 talkerText.text = talkerData;
                 break;
