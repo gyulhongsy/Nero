@@ -8,7 +8,6 @@ public class DialogueManager : MonoBehaviour
     public TalkManager talkManager;
     public EventManager eventManager;
 
-    // public GameObject obj;
     public GameObject talkPanel;
     public Text talkText;
     public Text talkerText;
@@ -20,8 +19,6 @@ public class DialogueManager : MonoBehaviour
     {
         isAction = true;
         talkPanel.SetActive(true);
-
-        // ObjData objData = obj.GetComponent<ObjData>();
 
         switch (name)
         {
@@ -57,9 +54,7 @@ public class DialogueManager : MonoBehaviour
                 break;
         }
 
-
         talkPanel.SetActive(isAction);
-
     }
 
     public void Talk(int id, int talkerId)
@@ -67,22 +62,32 @@ public class DialogueManager : MonoBehaviour
         string talkData = talkManager.GetTalk(id, talkIndex);
         string talkerData = talkManager.GetTalker(talkerId);
 
-        // scene2
-        if (id == 311 && talkData == null)  // 여자아이 사라짐
-            eventManager.girlParent();
-
-        // scene3
-        if (id == 420 && talkData == null)  // 도망가기 시작
-            eventManager.catChase();
 
         // 대화 종료
         if (talkData == null)
         {
             isAction = false;
+
+            switch (id)
+            {
+                // scene 1 : 할아버지 가방 획득
+                case 120:
+                    eventManager.addBag();
+                    break;
+                // scene 2 : 여자아이 사라짐
+                case 311:
+                    eventManager.girlParent();
+                    break;
+                //scene 3 : 도망 시작
+                case 420:
+                    eventManager.catChase();
+                    break;
+            }
+
             talkIndex = 0;
+
             return;
         }
-
 
         StartCoroutine(Typing(talkData));
 
@@ -103,11 +108,6 @@ public class DialogueManager : MonoBehaviour
                     talkerText.text = talkManager.GetTalker(0);
                 else
                     talkerText.text = talkerData;
-
-                if (talkIndex == 25)
-                {
-                    eventManager.addBag();
-                }
                 break;
             case 210:
                 if (talkIndex == 1)
@@ -173,7 +173,6 @@ public class DialogueManager : MonoBehaviour
 
         Debug.Log("talkIndex : " + talkIndex);
 
-
         isAction = true;
         talkIndex++;
     }
@@ -184,7 +183,7 @@ public class DialogueManager : MonoBehaviour
         foreach (char letter in text.ToCharArray())
         {
             talkText.text += letter;
-            yield return new WaitForSeconds(0.06f);
+            yield return new WaitForSeconds(0.04f);
         }
     }
 }

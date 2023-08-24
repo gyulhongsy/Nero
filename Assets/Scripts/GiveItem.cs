@@ -72,7 +72,7 @@ public class GiveItem : MonoBehaviour, IPointerClickHandler
             bag.GetComponent<Bag2>().isBagOpen = false;     // 가방 열림 확인 변수 false
             bagInven.SetActive(false);   // 가방 인벤닫기
 
-            eventDialogue.StartEvent(17, "mr.drunken event");
+            eventDialogue.StartEvent(20, "mr.drunken event");
         }
         if (giveD)  // 음료 전달 가능
         {
@@ -82,7 +82,7 @@ public class GiveItem : MonoBehaviour, IPointerClickHandler
             bag.GetComponent<Bag2>().isBagOpen = false;     // 가방 열림 확인 변수 false
             bagInven.SetActive(false);   // 가방 인벤닫기
 
-            eventDialogue.StartEvent(10, "missingGirl event");
+            eventDialogue.StartEvent(9, "missingGirl event");
         }
     }
 }

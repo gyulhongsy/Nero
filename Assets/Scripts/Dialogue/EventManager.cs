@@ -18,28 +18,29 @@ public class EventManager : MonoBehaviour
 
     void Start()
     {
-        if (SceneManager.GetActiveScene().name == "NeroHouse")
+        switch (SceneManager.GetActiveScene().name)
         {
-            // scene1
-            bag = GameObject.Find("item");
-            bag.SetActive(false);
+            case "NeroHouse":
+                // scene1
+                bag = GameObject.Find("item");
+                bag.SetActive(false);
+                break;
+            case "Chap12":
+                // scene2
+                girlMom = GameObject.Find("GirlMom");
+                break;
+            case "Chap3":
+                // scene3
+                storeCat = GameObject.Find("storeCat");
+                cat1 = GameObject.Find("cat1");
+                cat2 = GameObject.Find("cat2");
+                cat3 = GameObject.Find("cat3");
+                cat4 = GameObject.Find("cat4");
+                cat5 = GameObject.Find("cat5");
+                cat6 = GameObject.Find("cat6");
+                break;
         }
-        if (SceneManager.GetActiveScene().name == "Chap12")
-        {
-            // scene2
-            girlMom = GameObject.Find("GirlMom");
-        }
-        if (SceneManager.GetActiveScene().name == "Chap3")
-        {
-            // scene3
-            storeCat = GameObject.Find("storeCat");
-            cat1 = GameObject.Find("cat1");
-            cat2 = GameObject.Find("cat2");
-            cat3 = GameObject.Find("cat3");
-            cat4 = GameObject.Find("cat4");
-            cat5 = GameObject.Find("cat5");
-            cat6 = GameObject.Find("cat6");
-        }
+
     }
 
     public void addBag()
