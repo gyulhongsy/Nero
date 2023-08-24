@@ -11,9 +11,23 @@ public class DialogueManager : MonoBehaviour
     public GameObject talkPanel;
     public Text talkText;
     public Text talkerText;
+    private string talkData;
+    private string talkerData;
 
     public bool isAction;
     public int talkIndex;
+
+    Coroutine typingCoroutine;
+
+    void Update()
+    {
+        if (isAction)
+            if (Input.GetMouseButtonDown(0))
+            {
+                StopCoroutine(typingCoroutine);
+                talkText.text = talkData;
+            }
+    }
 
     public void Action(string name)
     {
@@ -59,8 +73,8 @@ public class DialogueManager : MonoBehaviour
 
     public void Talk(int id, int talkerId)
     {
-        string talkData = talkManager.GetTalk(id, talkIndex);
-        string talkerData = talkManager.GetTalker(talkerId);
+        talkData = talkManager.GetTalk(id, talkIndex);
+        talkerData = talkManager.GetTalker(talkerId);
 
 
         // 대화 종료
@@ -89,7 +103,7 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        StartCoroutine(Typing(talkData));
+        StartTyping(talkData);
 
         switch (id)
         {
@@ -175,6 +189,11 @@ public class DialogueManager : MonoBehaviour
 
         isAction = true;
         talkIndex++;
+    }
+
+    private void StartTyping(string text)
+    {
+        typingCoroutine = StartCoroutine(Typing(text));
     }
 
     IEnumerator Typing(string text)
