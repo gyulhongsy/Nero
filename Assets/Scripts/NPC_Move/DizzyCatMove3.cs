@@ -11,6 +11,7 @@ public class DizzyCatMove3 : MonoBehaviour
     Collider2D collider;
 
     public GameObject nero;
+    GameObject bomb1;   // µÎ¹øÂ° ÆøÅº
     
     public Boolean neroButtonOn2 = false;
     public int chaseStart = 0;
@@ -18,6 +19,8 @@ public class DizzyCatMove3 : MonoBehaviour
 
     void Start()
     {
+        bomb1 = GameObject.Find("bomb1");
+        bomb1.SetActive(false);
         //chaseStart = 1;
     }
 
@@ -69,6 +72,7 @@ public class DizzyCatMove3 : MonoBehaviour
             {
                 Debug.Log("µÎ¹øÂ° ÆøÅº Æã");
                 neroButtonOn2 = true;
+                bomb1.SetActive(true);
             }
         }
 

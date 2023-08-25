@@ -11,6 +11,7 @@ public class StoreCatMove : MonoBehaviour
     Collider2D collider;
 
     public GameObject nero;     // 네로 오브젝트
+    GameObject bomb3;
 
     public Boolean neroButtonOn = false;    // 네로 마지막 폭탄 눌렀는지 여부
     public int chaseStart = 0;      // 네로 잡으러 가는지 여부 0: 시작 안함, 1: 시작
@@ -19,6 +20,8 @@ public class StoreCatMove : MonoBehaviour
 
     void Start()
     {
+        bomb3 = GameObject.Find("bomb3");
+        bomb3.SetActive(false);
         //chaseStart = 1;
 
     }
@@ -89,6 +92,7 @@ public class StoreCatMove : MonoBehaviour
             {
                 Debug.Log("마지막 폭탄 펑");
                 neroButtonOn = true;    // 폭탄 터짐 참
+                bomb3.SetActive(true);
             }
         }
 

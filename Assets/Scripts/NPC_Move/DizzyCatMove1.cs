@@ -11,6 +11,7 @@ public class DizzyCatMove1 : MonoBehaviour
     Collider2D collider;
 
     public GameObject nero;     // 네로 오브젝트
+    GameObject bomb2;   // 첫번째 폭탄
     
     public Boolean neroButtonOn1 = false;   // 네로 첫번째 폭탄 눌렀는지 여부
     public int chaseStart = 0;  // 네로 잡으러 가는지 여부 0: 시작 안함, 1: 시작
@@ -18,6 +19,8 @@ public class DizzyCatMove1 : MonoBehaviour
 
     void Start()
     {
+        bomb2 = GameObject.Find("bomb2");
+        bomb2.SetActive(false);
         //chaseStart = 1;
     }
 
@@ -69,6 +72,7 @@ public class DizzyCatMove1 : MonoBehaviour
             {
                 Debug.Log("첫번째 폭탄 펑");
                 neroButtonOn1 = true;   // 폭탄 터짐 참
+                bomb2.SetActive(true);  // 폭탄 터짐 나타남
             }
         }
 
