@@ -6,13 +6,14 @@ using UnityEngine;
 public class BirdMove : MonoBehaviour
 {
     Rigidbody2D rigid;
-    //Animator anim;
+    Animator anim;
 
     Boolean isFlying = false;   // 날 수 있는지 확인 변수
 
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
@@ -20,7 +21,10 @@ public class BirdMove : MonoBehaviour
         if (isFlying)   // 날기 변수 true면 날기
         {
             if (transform.position.x < 40)
+            {
                 transform.Translate(new Vector3(0.02f, 0.02f, 0), Space.Self);
+                anim.SetBool("isBirdFlying", true);
+            }
         }
     }
 
