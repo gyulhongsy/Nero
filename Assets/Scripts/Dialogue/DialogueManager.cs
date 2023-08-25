@@ -66,6 +66,9 @@ public class DialogueManager : MonoBehaviour
             case "storeCat":
                 Talk(420, 226);
                 break;
+            case "storeCat event":
+                Talk(500, 0);
+                break;
         }
 
         talkPanel.SetActive(isAction);
