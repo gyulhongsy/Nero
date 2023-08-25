@@ -28,7 +28,7 @@ public class MarbleScript : MonoBehaviour
         marble1.SetActive(false);
         marble2 = GameObject.Find("marble2");
         marble2.SetActive(false);
-        combine = true;
+        //combine = true;
 
     }
 
