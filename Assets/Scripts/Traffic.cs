@@ -17,12 +17,18 @@ public class Traffic : MonoBehaviour
     {
         Target.SetActive(true);
         state = true;
+        AudioSource off = GetComponent<AudioSource>();
+        off.Play();
     }
 
     void StairsOn()
     {
         Target.SetActive(false);
         state = false;
+        AudioSource on = GetComponent<AudioSource>();
+        on.Play();
     }
+
+
 
 }

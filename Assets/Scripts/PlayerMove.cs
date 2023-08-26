@@ -57,6 +57,8 @@ public class PlayerMove : MonoBehaviour
         if (Input.GetButtonDown("Jump") && !anim.GetBool("isJumping")) {
             rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
             anim.SetBool("isJumping", true);
+            AudioSource jump = GetComponent<AudioSource>();
+            jump.Play();
         }
         //Stop Speed
         if (Input.GetButtonUp("Horizontal")) {
@@ -84,6 +86,8 @@ public class PlayerMove : MonoBehaviour
         if (up_down && !anim.GetBool("isJumping")) {
             rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
             anim.SetBool("isJumping", true);
+            AudioSource jump = GetComponent<AudioSource>();
+            jump.Play();
         }
         //Stop Speed
         if (right_Up && left_Up) {

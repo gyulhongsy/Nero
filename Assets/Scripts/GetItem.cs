@@ -24,6 +24,8 @@ public class GetItem : MonoBehaviour
     //test code
     private void OnMouseDown()
     {
+        AudioSource itemget = GetComponent<AudioSource>();
+        itemget.Play();
         Debug.Log("æ∆¿Ã≈€ »πµÊ");
         item.SetActive(true);
     }

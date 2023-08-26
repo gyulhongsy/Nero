@@ -24,6 +24,7 @@ public class BirdMove : MonoBehaviour
             {
                 transform.Translate(new Vector3(0.02f, 0.02f, 0), Space.Self);
                 anim.SetBool("isBirdFlying", true);
+               
             }
         }
     }
@@ -34,10 +35,15 @@ public class BirdMove : MonoBehaviour
         RaycastHit2D rayHit = Physics2D.Raycast(rigid.position, Vector3.left, 1, LayerMask.GetMask("Player"));
         if (rayHit.collider != null)
         {
+            
             if (rayHit.distance < 7.5f)
             {
                 Debug.Log("새 날아감");
+               
                 isFlying = true;    // 날기 변수 true
+                AudioSource flying = GetComponent<AudioSource>();
+                flying.Play();
+
             }
 
         }
