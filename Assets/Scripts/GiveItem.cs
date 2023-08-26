@@ -23,12 +23,6 @@ public class GiveItem : MonoBehaviour, IPointerClickHandler
     public Boolean giveD = false;       // 음료 전달 가능 여부
     public Boolean finishD = false;     // 음료 전달 완료 여부
 
-    void Start()
-    {
-        //anim = girl.GetComponent<Animator>();
-    }
-
-
 
     void Arrive()   // 아저씨 or 여자아이에게 도착 시 함수
     {

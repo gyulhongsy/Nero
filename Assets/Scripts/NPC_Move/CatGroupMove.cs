@@ -7,13 +7,8 @@ public class CatGroupMove : MonoBehaviour
 {
     Rigidbody2D rigid;
 
-    Boolean catGroupWalk = false;
-    public GameObject playB;
+    public Boolean catGroupWalk = false;
 
-    void Start()
-    {
-        playB.SetActive(false);
-    }
 
     void Awake()
     {
@@ -25,14 +20,13 @@ public class CatGroupMove : MonoBehaviour
     {
         if (catGroupWalk)
         {
-            if (Math.Truncate(transform.position.x) > 3)
+            if (Math.Truncate(transform.position.x) > 1)
             {
                 transform.Translate(new Vector3(-0.03f, 0, 0), Space.Self);
             }
             else
             {
                 catGroupWalk = false;
-                playB.SetActive(true);
             }
         }
     }

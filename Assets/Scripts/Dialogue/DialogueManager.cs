@@ -87,6 +87,10 @@ public class DialogueManager : MonoBehaviour
 
             switch (id)
             {
+                // scene 1 : 고양이 무리 다가옴
+                case 101:
+                    eventManager.catsCome();
+                    break;
                 // scene 1 : 할아버지 가방 획득
                 case 120:
                     eventManager.addBag();

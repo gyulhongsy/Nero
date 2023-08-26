@@ -7,6 +7,7 @@ using static UnityEditor.Progress;
 public class EventManager : MonoBehaviour
 {
     GameObject bag; //가방 오브젝트
+    GameObject catGroup;    // 고양이 무리 오브젝트
     GameObject girlMom;    // 여자아이엄마 오브젝트
     GameObject storeCat;    // 상점 아줌마
     GameObject cat1; // 캣잎 고양이1
@@ -24,6 +25,7 @@ public class EventManager : MonoBehaviour
                 // scene1
                 bag = GameObject.Find("item");
                 bag.SetActive(false);
+                catGroup = GameObject.Find("cats event");
                 break;
             case "Chap12":
                 // scene2
@@ -47,6 +49,12 @@ public class EventManager : MonoBehaviour
     {
         Debug.Log("가방 획득");
         bag.SetActive(true);
+    }
+
+    public void catsCome()
+    {
+        Debug.Log("고양이 무리 다가옴");
+        catGroup.GetComponent<CatGroupMove>().catGroupWalk = true;
     }
 
     public void girlParent()
