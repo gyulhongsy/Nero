@@ -22,6 +22,7 @@ public class DizzyCatMove1 : MonoBehaviour
         bomb2 = GameObject.Find("bomb2");
         bomb2.SetActive(false);
         //chaseStart = 1;
+        
     }
 
     void Awake()
@@ -38,6 +39,8 @@ public class DizzyCatMove1 : MonoBehaviour
         {
             anim.SetBool("isCatRun", true);     // 달리는 애니메이션 시작
             collider.isTrigger = false; // 네로와 충돌 일어나게 함
+            AudioSource MEOW = GetComponent<AudioSource>();
+            MEOW.Play();
             //nero.transform.position = new Vector3(21f, -4.5f, 0);
             chaseStart += 1;    // 시작했으니 변수 바꿈
             if (transform.position.y >= 0.5f)
