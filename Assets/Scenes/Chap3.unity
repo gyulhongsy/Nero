@@ -345,6 +345,7 @@ GameObject:
   - component: {fileID: 34315010}
   - component: {fileID: 34315012}
   - component: {fileID: 34315013}
+  - component: {fileID: 34315014}
   m_Layer: 3
   m_Name: cat2
   m_TagString: DizzyCat
@@ -472,6 +473,26 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
+--- !u!95 &34315014
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34315007}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ad546d49bdbdf324a9b3845129244934, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &53668646
 GameObject:
   m_ObjectHideFlags: 0
@@ -2082,6 +2103,7 @@ GameObject:
   - component: {fileID: 937304024}
   - component: {fileID: 937304026}
   - component: {fileID: 937304027}
+  - component: {fileID: 937304028}
   m_Layer: 3
   m_Name: cat4
   m_TagString: DizzyCat
@@ -2209,6 +2231,26 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
+--- !u!95 &937304028
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937304021}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: efef4fbc6ee309c499a68a0fcd13154c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1000945456
 GameObject:
   m_ObjectHideFlags: 0
@@ -4275,6 +4317,7 @@ GameObject:
   - component: {fileID: 1499931343}
   - component: {fileID: 1499931345}
   - component: {fileID: 1499931346}
+  - component: {fileID: 1499931347}
   m_Layer: 3
   m_Name: cat5
   m_TagString: DizzyCat
@@ -4402,6 +4445,26 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
+--- !u!95 &1499931347
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1499931340}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4bf62b08edb729f4ab227a8d4b7eff5f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1512996235
 GameObject:
   m_ObjectHideFlags: 0
@@ -4415,6 +4478,7 @@ GameObject:
   - component: {fileID: 1512996238}
   - component: {fileID: 1512996240}
   - component: {fileID: 1512996241}
+  - component: {fileID: 1512996242}
   m_Layer: 3
   m_Name: cat6
   m_TagString: DizzyCat
@@ -4542,6 +4606,26 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
+--- !u!95 &1512996242
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512996235}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c6ab78108376d95489b9bfedff6a0bd3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1554403797
 GameObject:
   m_ObjectHideFlags: 0
@@ -5110,6 +5194,7 @@ GameObject:
   - component: {fileID: 1674529170}
   - component: {fileID: 1674529172}
   - component: {fileID: 1674529173}
+  - component: {fileID: 1674529174}
   m_Layer: 3
   m_Name: cat3
   m_TagString: DizzyCat
@@ -5237,6 +5322,26 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
+--- !u!95 &1674529174
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1674529167}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0a83c63deb7040f4a92ddaf029c191c6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1689560267
 GameObject:
   m_ObjectHideFlags: 0
@@ -5767,6 +5872,7 @@ GameObject:
   - component: {fileID: 2001299809}
   - component: {fileID: 2001299811}
   - component: {fileID: 2001299812}
+  - component: {fileID: 2001299813}
   m_Layer: 3
   m_Name: cat1
   m_TagString: DizzyCat
@@ -5894,6 +6000,26 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
+--- !u!95 &2001299813
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001299806}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d0ab4449f942d7d4e899eb83a9b9c512, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2010007337
 GameObject:
   m_ObjectHideFlags: 0

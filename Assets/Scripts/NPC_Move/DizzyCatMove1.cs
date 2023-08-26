@@ -36,6 +36,7 @@ public class DizzyCatMove1 : MonoBehaviour
     {
         if (chaseStart == 1)    // 네로 잡는거 참
         {
+            anim.SetBool("isCatRun", true);     // 달리는 애니메이션 시작
             collider.isTrigger = false; // 네로와 충돌 일어나게 함
             //nero.transform.position = new Vector3(21f, -4.5f, 0);
             chaseStart += 1;    // 시작했으니 변수 바꿈
@@ -58,6 +59,7 @@ public class DizzyCatMove1 : MonoBehaviour
                 {
                     chaseLeft = false;  // 왼쪽 이동 끝
                     collider.isTrigger = true;  // 충돌 없애기
+                    anim.SetBool("isCatRun", false);    // 달리는 애니메이션 끝
                 }
             }
             else    // 계속 이동
