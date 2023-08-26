@@ -11,6 +11,7 @@ public class StoreCatMove : MonoBehaviour
     Collider2D collider;
 
     public GameObject nero;     // 네로 오브젝트
+    GameObject storeCatEvent;   // 쓰러진 상점 아줌마
     GameObject bomb3;
 
     public Boolean neroButtonOn = false;    // 네로 마지막 폭탄 눌렀는지 여부
@@ -22,6 +23,8 @@ public class StoreCatMove : MonoBehaviour
     {
         bomb3 = GameObject.Find("bomb3");
         bomb3.SetActive(false);
+        storeCatEvent = GameObject.Find("storeCat event");
+        storeCatEvent.SetActive(false);     // 쓰러진 상점 아줌마 비활성화
         //chaseStart = 1;
 
     }
@@ -77,6 +80,8 @@ public class StoreCatMove : MonoBehaviour
                     chaseRignt = false;     //오른쪽 이동 멈춤
                     collider.isTrigger = true;  //네로와 충돌 멈춤
                     rigid.constraints = RigidbodyConstraints2D.FreezePositionY; // y축 고정
+                    gameObject.SetActive(false);    // 움직이던 캣닢아줌마 비활성화
+                    storeCatEvent.SetActive(true);  // 쓰러진 캣닢아줌마 활성화
                 }
                 //neroButtonOn = false;
             }

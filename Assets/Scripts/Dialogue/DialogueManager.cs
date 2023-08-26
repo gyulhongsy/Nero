@@ -103,6 +103,10 @@ public class DialogueManager : MonoBehaviour
                 case 420:
                     eventManager.catChase();
                     break;
+                //scene 3 : 구슬 합치기
+                case 500:
+                    eventManager.combineMarble();
+                    break;
             }
 
             talkIndex = 0;

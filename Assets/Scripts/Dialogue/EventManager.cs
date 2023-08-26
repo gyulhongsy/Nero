@@ -16,6 +16,7 @@ public class EventManager : MonoBehaviour
     GameObject cat4; // Ä¹ÀÙ °í¾çÀÌ4
     GameObject cat5; // Ä¹ÀÙ °í¾çÀÌ5
     GameObject cat6; // Ä¹ÀÙ °í¾çÀÌ6
+    GameObject marbleGroup;     // ±¸½½ Á¶°¢ ±×·ì
 
     void Start()
     {
@@ -40,6 +41,7 @@ public class EventManager : MonoBehaviour
                 cat4 = GameObject.Find("cat4");
                 cat5 = GameObject.Find("cat5");
                 cat6 = GameObject.Find("cat6");
+                marbleGroup = GameObject.Find("marbleGroup");
                 break;
         }
 
@@ -72,5 +74,9 @@ public class EventManager : MonoBehaviour
         cat4.GetComponent<DizzyCatMove4>().chaseStart = 1;
         cat5.GetComponent<DizzyCatMove5>().chaseStart = 1;
         cat6.GetComponent<DizzyCatMove6>().chaseStart = 1;
+    }
+    public void combineMarble()
+    {
+        marbleGroup.GetComponent<MarbleScript>().combine = true;
     }
 }
