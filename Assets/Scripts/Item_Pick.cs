@@ -8,7 +8,7 @@ public class Item_Pick : MonoBehaviour
     public bool pick; //아이템을 획득했는지 판단
     GameObject obj; //아이템 주는 오브젝트
     GameObject item; //아이템 오브젝트
-
+    
     void Start()
     {
         itemFlag = false;
@@ -23,6 +23,7 @@ public class Item_Pick : MonoBehaviour
         {
             Debug.Log("아이템에 닿음");
             itemFlag = true;
+            
         }
     }
 
@@ -30,10 +31,12 @@ public class Item_Pick : MonoBehaviour
     {
         if (itemFlag && (Input.touchCount > 0))
         {
+            AudioSource itempick = GetComponent<AudioSource>();
             Debug.Log("아이템에 획득");
             //Destroy(gameObject);
             gameObject.SetActive(false);
             pick = true;
+            itempick.Play();
         }
     }
 
@@ -42,11 +45,16 @@ public class Item_Pick : MonoBehaviour
     {
         if (itemFlag)
         {
+            AudioSource itempick = GetComponent<AudioSource>();
+            itempick.Play();
             Debug.Log("아이템에 획득");
             //Destroy(gameObject);
             gameObject.SetActive(false);
             pick = true;
             itemFlag = false;
+            
+            
+
         }
     }
 }

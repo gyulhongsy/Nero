@@ -11,6 +11,7 @@ public class StoreCatMove : MonoBehaviour
     Collider2D collider;
 
     public GameObject nero;     // 네로 오브젝트
+    GameObject storeCatEvent;   // 쓰러진 상점 아줌마
     GameObject bomb3;
 
     public Boolean neroButtonOn = false;    // 네로 마지막 폭탄 눌렀는지 여부
@@ -22,6 +23,8 @@ public class StoreCatMove : MonoBehaviour
     {
         bomb3 = GameObject.Find("bomb3");
         bomb3.SetActive(false);
+        storeCatEvent = GameObject.Find("storeCat event");
+        storeCatEvent.SetActive(false);     // 쓰러진 상점 아줌마 비활성화
         //chaseStart = 1;
 
     }
@@ -38,6 +41,7 @@ public class StoreCatMove : MonoBehaviour
     {
         if(chaseStart == 1)     // 네로 잡으러 가기 시작
         {
+            anim.SetBool("isStoreCatRun", true);    // 달리는 애니메이션 시작
             collider.isTrigger = false;     // 충돌 일어나게 함
             rigid.constraints = RigidbodyConstraints2D.None;    //y축 고정 해제
             rigid.constraints = RigidbodyConstraints2D.FreezeRotation;  // z축 고정
@@ -59,7 +63,8 @@ public class StoreCatMove : MonoBehaviour
             else    // x축 -5까지 도착
             {
                 chaseLeft = false;  // 왼쪽 잡으러 가기 끝
-                if(transform.position.y <= 7.5f)
+                spriteRenderer.flipX = true;    // 이미지 x축 기준 뒤집기
+                if (transform.position.y <= 7.5f)
                     chaseRignt = true;  // 오른쪽으로 잡으러 가기 시작
             }
         }
@@ -77,6 +82,8 @@ public class StoreCatMove : MonoBehaviour
                     chaseRignt = false;     //오른쪽 이동 멈춤
                     collider.isTrigger = true;  //네로와 충돌 멈춤
                     rigid.constraints = RigidbodyConstraints2D.FreezePositionY; // y축 고정
+                    gameObject.SetActive(false);    // 움직이던 캣닢아줌마 비활성화
+                    storeCatEvent.SetActive(true);  // 쓰러진 캣닢아줌마 활성화
                 }
                 //neroButtonOn = false;
             }

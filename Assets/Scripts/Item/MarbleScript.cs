@@ -5,10 +5,13 @@ using UnityEngine;
 
 public class MarbleScript : MonoBehaviour
 {
+    Animator anim;
+
     GameObject warmHole;     // 웜홀
     GameObject marble;      // 합친 구슬
     GameObject marble1;     //조각 구슬1
     GameObject marble2;     // 조각 구슬2
+    public GameObject storeCatEvent;    // 헤롱거리는 상점아줌마
     public GameObject invenMarble1;     // 인벤에 있는 구슬조각1 
     public GameObject invenMarble;     // 인벤에 있는 구슬조각  
 
@@ -20,6 +23,7 @@ public class MarbleScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        anim = storeCatEvent.GetComponent<Animator>();
         warmHole = GameObject.Find("warmHole");
         warmHole.SetActive(false);
         marble = GameObject.Find("marble");
@@ -45,6 +49,7 @@ public class MarbleScript : MonoBehaviour
         {
             invenMarble1.SetActive(false);
             marble1.SetActive(true);
+            anim.SetBool("isTaken", true);  // 상점아줌마로부터 구슬조각2 가져감
             Debug.Log(timer + "구슬조각1");
         }
         if (Math.Truncate(timer) == 2)

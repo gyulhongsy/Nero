@@ -79,6 +79,7 @@ public class PlayerMoveAuto : MonoBehaviour
             }
             else // x축 -2까지 도착시
             {
+                comeBack = false;
                 playB.SetActive(true);      // 이동 나타남
                 anim.SetBool("isAuto", false);
             }

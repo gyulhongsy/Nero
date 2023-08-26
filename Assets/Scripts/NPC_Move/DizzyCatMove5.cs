@@ -33,6 +33,7 @@ public class DizzyCatMove5 : MonoBehaviour
     {
         if (chaseStart == 1)
         {
+            anim.SetBool("isCatRun", true);     // 달리는 애니메이션 시작
             collider.isTrigger = false;
             //nero.transform.position = new Vector3(21f, -4.5f, 0);
             chaseStart += 1;
@@ -55,6 +56,7 @@ public class DizzyCatMove5 : MonoBehaviour
                 {
                     chaseLeft = false;
                     collider.isTrigger = true;
+                    anim.SetBool("isCatRun", false);    // 달리는 애니메이션 끝
                 }
             }
             else

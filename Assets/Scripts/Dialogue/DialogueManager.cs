@@ -93,6 +93,10 @@ public class DialogueManager : MonoBehaviour
 
             switch (id)
             {
+                // scene 1 : 고양이 무리 다가옴
+                case 101:
+                    eventManager.catsCome();
+                    break;
                 // scene 1 : 할아버지 가방 획득
                 case 120:
                     eventManager.addBag();
@@ -104,6 +108,10 @@ public class DialogueManager : MonoBehaviour
                 //scene 3 : 도망 시작
                 case 420:
                     eventManager.catChase();
+                    break;
+                //scene 3 : 구슬 합치기
+                case 500:
+                    eventManager.combineMarble();
                     break;
             }
 
