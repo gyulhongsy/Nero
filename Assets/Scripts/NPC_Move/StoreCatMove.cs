@@ -41,6 +41,7 @@ public class StoreCatMove : MonoBehaviour
     {
         if(chaseStart == 1)     // 네로 잡으러 가기 시작
         {
+            anim.SetBool("isStoreCatRun", true);    // 달리는 애니메이션 시작
             collider.isTrigger = false;     // 충돌 일어나게 함
             rigid.constraints = RigidbodyConstraints2D.None;    //y축 고정 해제
             rigid.constraints = RigidbodyConstraints2D.FreezeRotation;  // z축 고정
@@ -62,7 +63,8 @@ public class StoreCatMove : MonoBehaviour
             else    // x축 -5까지 도착
             {
                 chaseLeft = false;  // 왼쪽 잡으러 가기 끝
-                if(transform.position.y <= 7.5f)
+                spriteRenderer.flipX = true;    // 이미지 x축 기준 뒤집기
+                if (transform.position.y <= 7.5f)
                     chaseRignt = true;  // 오른쪽으로 잡으러 가기 시작
             }
         }
