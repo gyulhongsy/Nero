@@ -8,6 +8,8 @@ public class NeroDadMove : MonoBehaviour
     float timer = 0;    // 타이머
     Boolean goToNero = false;   // 네로에게 가기 여부 변수
 
+    public EventDialogue eventDialogue;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,7 @@ public class NeroDadMove : MonoBehaviour
             else  // x축 -4까지 도착
             {
                 goToNero = false;   // 네로에게 가기 거짓
+                eventDialogue.StartEvent(7, "ending");
             }
         }
 

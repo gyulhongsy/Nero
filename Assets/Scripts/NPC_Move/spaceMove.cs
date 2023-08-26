@@ -14,20 +14,29 @@ public class spaceMove : MonoBehaviour
     //Mobile Key Var
     int up_Value;
     int down_Value;
-/*    bool up_down;
-    bool down_down;
-    bool up_Up;
-    bool down_Up;*/
+    /*    bool up_down;
+        bool down_down;
+        bool up_Up;
+        bool down_Up;*/
+
+    public DialogueManager manager;
+    public EventDialogue eventDialogue;
 
     void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();    
     }
+
+    void Start()
+    {
+        eventDialogue.StartEvent(3, "space");
+    }
     
     void Update()
     {
        // h = Input.GetAxisRaw("Horizontal");
-        v = Input.GetAxisRaw("Vertical") + up_Value + down_Value;
+       if (manager.isAction == false)
+            v = Input.GetAxisRaw("Vertical") + up_Value + down_Value;
 
     }
 
