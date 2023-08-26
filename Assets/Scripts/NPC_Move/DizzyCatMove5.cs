@@ -71,6 +71,7 @@ public class DizzyCatMove5 : MonoBehaviour
             {
                 Debug.Log("µÎ¹øÂ° ÆøÅº Æã");
                 neroButtonOn2 = true;
+                
             }
         }
 

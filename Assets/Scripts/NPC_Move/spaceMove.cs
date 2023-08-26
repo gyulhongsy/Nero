@@ -37,6 +37,7 @@ public class spaceMove : MonoBehaviour
        // h = Input.GetAxisRaw("Horizontal");
        if (manager.isAction == false)
             v = Input.GetAxisRaw("Vertical") + up_Value + down_Value;
+       
 
     }
 
@@ -60,10 +61,14 @@ public class spaceMove : MonoBehaviour
         {
             case "U":
                 up_Value = 1;
+                AudioSource up = GetComponent<AudioSource>();
+                up.Play();
                 //up_down = true;
                 break;
             case "D":
                 down_Value = -1;
+                AudioSource down = GetComponent<AudioSource>();
+                down.Play();
                 //down_down = true;
                 break;
         }
@@ -75,10 +80,14 @@ public class spaceMove : MonoBehaviour
         {
             case "U":
                 up_Value = 0;
+                AudioSource up = GetComponent<AudioSource>();
+                up.Play();
                 //up_Up = true;
                 break;
             case "D":
                 down_Value = 0;
+                AudioSource down = GetComponent<AudioSource>();
+                down.Play();
                 //down_Up = true;
                 break;
         }
