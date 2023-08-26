@@ -69,6 +69,12 @@ public class DialogueManager : MonoBehaviour
             case "storeCat event":
                 Talk(500, 0);
                 break;
+            case "space":
+                Talk(600, 0);
+                break;
+            case "ending":
+                Talk(700, 0);
+                break;
         }
 
         talkPanel.SetActive(isAction);
@@ -205,7 +211,7 @@ public class DialogueManager : MonoBehaviour
         foreach (char letter in text.ToCharArray())
         {
             talkText.text += letter;
-            yield return new WaitForSeconds(0.04f);
+            yield return new WaitForSeconds(0.06f);
         }
     }
 }
