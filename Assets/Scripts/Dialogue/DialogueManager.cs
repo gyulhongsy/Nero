@@ -26,6 +26,8 @@ public class DialogueManager : MonoBehaviour
             {
                 StopCoroutine(typingCoroutine);
                 talkText.text = talkData;
+                AudioSource textpanel = GetComponent<AudioSource>();
+                textpanel.Play();
             }
     }
 
