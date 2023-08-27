@@ -6,39 +6,18 @@ using UnityEngine;
 
 public class Bag1 : MonoBehaviour
 {
-    public Boolean isBagOpen = false;
-
-    public GameObject bagObj;
-    public GameObject bagButton;
     public GameObject bag;
-    
 
-    // Start is called before the first frame update
-    void Start()
+    public void BagOpen()   // 가방 열기
     {
-        
+        bag.SetActive(true);
+        Debug.Log("가방 열기");
     }
 
-    // Update is called once per frame
-    void Update()
+    public void BagClose()  // 가방 닫기
     {
-
+        bag.SetActive(false);
+        Debug.Log("가방 닫기");
     }
 
-
-    public void BagState()
-    {
-        if (isBagOpen)  //가방 닫기
-        {
-            isBagOpen = false;
-            bag.SetActive(false);
-            Debug.Log("가방 닫기");
-        }
-        else    // 가방 열기
-        {
-            isBagOpen = true;
-            bag.SetActive(true);
-            Debug.Log("가방 열기");
-        }
-    }
 }

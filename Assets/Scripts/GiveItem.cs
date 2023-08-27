@@ -72,7 +72,7 @@ public class GiveItem : MonoBehaviour, IPointerClickHandler
             finishH = true;     // 숙취제 줌
             invenMarble1.SetActive(true);   // 구슬조각 1 얻음
             ivenHangover.SetActive(false);  // 숙취제 사라짐 
-            bag.GetComponent<Bag2>().isBagOpen = false;     // 가방 열림 확인 변수 false
+            //bag.GetComponent<Bag2>().isBagOpen = false;     // 가방 열림 확인 변수 false
             bagInven.SetActive(false);   // 가방 인벤닫기
 
             eventDialogue.StartEvent(20, "mr.drunken event");
@@ -82,7 +82,7 @@ public class GiveItem : MonoBehaviour, IPointerClickHandler
             Debug.Log("음료 주기");
             finishD = true;     // 음료 줌
             ivenDrink.SetActive(false); // 음료 사라짐
-            bag.GetComponent<Bag2>().isBagOpen = false;     // 가방 열림 확인 변수 false
+            //bag.GetComponent<Bag2>().isBagOpen = false;     // 가방 열림 확인 변수 false
             bagInven.SetActive(false);   // 가방 인벤닫기
             anim = girl.GetComponent<Animator>();
             anim.SetBool("isHappy", true);  // 여자아이 웃음 애니메이션
