@@ -27,7 +27,7 @@ public class GiveItem : MonoBehaviour, IPointerClickHandler
     void Arrive()   // 아저씨 or 여자아이에게 도착 시 함수
     {
         // 아저씨 위치에 도착 시 숙취제 전달 가능
-        if(-1.5f <= player.transform.position.x && player.transform.position.x <= 0.5f)
+        if(-4f <= player.transform.position.x && player.transform.position.x <= -2f)
         {
             if(player.transform.position.y <= 2f)
             {
@@ -42,7 +42,7 @@ public class GiveItem : MonoBehaviour, IPointerClickHandler
         }
 
         // 여자아이 위치에 도착 시 음료 전달 가능
-        if (62.5f <= player.transform.position.x && player.transform.position.x <= 64.5f)
+        if (62f <= player.transform.position.x && player.transform.position.x <= 65f)
         {
             if (player.transform.position.y <= 3f)
             {
