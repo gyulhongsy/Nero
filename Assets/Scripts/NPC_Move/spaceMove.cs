@@ -2,10 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class spaceMove : MonoBehaviour
 {
     public float speed;
+    public GameObject canvas;
 
     Rigidbody2D rigid;
     //float h;
@@ -47,10 +49,15 @@ public class spaceMove : MonoBehaviour
         if (transform.position.x < 57)  //네로 오른쪽 이동
         {
             rigid.velocity = new Vector2(0.8f, v) * speed;   
+            if(transform.position.x > 54)
+            {
+                canvas.SetActive(false);
+            }
         }
         else  // 네로 멈춤
         {
-            rigid.velocity = new Vector2(0, v);  
+            rigid.velocity = new Vector2(0, v);
+            SceneManager.LoadScene("CatPlanet");
         }
 
     }
