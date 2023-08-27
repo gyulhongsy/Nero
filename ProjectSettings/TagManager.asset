@@ -44,3 +44,24 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 1782820387
+    locked: 0
+  - name: Object
+    uniqueID: 3318611247
+    locked: 0
+  - name: Platform
+    uniqueID: 316248225
+    locked: 0
+  - name: NPC
+    uniqueID: 151225401
+    locked: 0
+  - name: Item
+    uniqueID: 1057354447
+    locked: 0
+  - name: Player
+    uniqueID: 4132455289
+    locked: 0
+  - name: UI
+    uniqueID: 3417525245
+    locked: 0
