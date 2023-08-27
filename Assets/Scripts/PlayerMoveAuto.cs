@@ -14,6 +14,8 @@ public class PlayerMoveAuto : MonoBehaviour
     public GameObject momCat;   // 네로 엄마
     public GameObject dadCat;   // 네로 아빠
 
+    public GameObject background1;  // 새벽 배경
+
     float timer = 0;
     Boolean chaseMouse = false; // 쥐 쫓는 변수
     Boolean comeBack = false;   // 네로 돌아오는 변수
@@ -46,7 +48,6 @@ public class PlayerMoveAuto : MonoBehaviour
         {
             if (Math.Truncate(transform.position.x) > -17)  // x축 -17까지 가기
             {
-                //transform.Translate(Vector3.left * Time.deltaTime);
                 transform.Translate(new Vector3(-0.01f, 0, 0), Space.Self);
                 spriteRenderer.flipX = Input.GetAxisRaw("Horizontal") == 1;
                 anim.SetBool("isAuto", true);
@@ -70,6 +71,7 @@ public class PlayerMoveAuto : MonoBehaviour
 
         if (comeBack)   // 네로 돌아올 떄
         {
+            background1.SetActive(false);       // 새벽 배경 사라짐
             if (Math.Truncate(transform.position.x) < -2)   // x축 -2까지 가기
             {
                 //transform.Translate(Vector3.right * Time.deltaTime);
