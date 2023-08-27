@@ -15,8 +15,6 @@ public class BgmOption_Trigger : MonoBehaviour
 
     public void OptionDown()
     {
-        Time.timeScale = 0; // 시간정지
-        
         Option_Page.SetActive(true);
         //audioSource.Play();
     }
