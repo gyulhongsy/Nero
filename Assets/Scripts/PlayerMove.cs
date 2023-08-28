@@ -174,13 +174,12 @@ public class PlayerMove : MonoBehaviour
 
 
                 // 조건식으로 스캔된 오브젝트에 따라 명령어를 다르게 보여주려고 합니다.
-                if (scanObject.name == "house")
-                {
+                if (scanObject.name == "house" || scanObject.name == "box"
+                    || scanObject.name == "Machine" || scanObject.name == "Machine2") {
                     balloon_text1.SetActive(true);
                     balloon_text1.transform.localPosition = new Vector3(scanObject.transform.position.x - 0.5f, balloonPosY, 0f);
                 }
-                else if (scanObject.name == "grandpaCat")
-                {
+                else {
                     balloon_text2.SetActive(true);
                     balloon_text2.transform.localPosition = new Vector3(scanObject.transform.position.x - 0.5f, balloonPosY, 0f);
                 }
