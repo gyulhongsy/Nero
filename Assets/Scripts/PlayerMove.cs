@@ -11,6 +11,10 @@ public class PlayerMove : MonoBehaviour
     SpriteRenderer spriteRenderer;
     Animator anim;
 
+    // 명령어 띄울 말풍선
+    public GameObject balloon;
+    public GameObject balloon_text1;
+    public GameObject balloon_text2;
     public float jumpPower;
     //Mobile key var
     int left_Value;
@@ -155,12 +159,51 @@ public class PlayerMove : MonoBehaviour
             scanObject = rayHitDetect.collider.gameObject;
 
             // 해당하는 명령어가 보이게 작성해주시면 됩니다
+            balloon.SetActive(true);
 
-            // Debug.Log("scan : " + scanObject.name);
+            Collider2D scanObjectCollider = scanObject.GetComponent<Collider2D>();
+
+            // 스캔된 오브젝트의 Collider가 있을 경우에만 위치 계산
+            if (scanObjectCollider != null)
+            {
+                float yOffset = 0.5f; // 말풍선이 오브젝트 위에 떠 있는 높이
+                float balloonPosY = scanObjectCollider.bounds.max.y + yOffset;
+
+                // 말풍선의 위치를 설정
+                balloon.transform.position = new Vector3(scanObject.transform.position.x - 0.5f, balloonPosY, 0f);
+
+
+                // 조건식으로 스캔된 오브젝트에 따라 명령어를 다르게 보여주려고 합니다.
+                if (scanObject.name == "house")
+                {
+                    balloon_text1.SetActive(true);
+                    balloon_text1.transform.localPosition = new Vector3(scanObject.transform.position.x - 0.5f, balloonPosY, 0f);
+                }
+                else if (scanObject.name == "grandpaCat")
+                {
+                    balloon_text2.SetActive(true);
+                    balloon_text2.transform.localPosition = new Vector3(scanObject.transform.position.x - 0.5f, balloonPosY, 0f);
+                }
+            }
+
+            Debug.Log("scan : " + scanObject.name);
+
+
         }
         else
         {
+            // 물체가 감지되지 않을 때 말풍선을 비활성화하고 추가 이미지도 제거
+            balloon.SetActive(false);
+            balloon_text1.SetActive(false);
+            balloon_text2.SetActive(false);
             scanObject = null;
+
+            // 추가 이미지 오브젝트가 있다면 제거
+            Transform additionalImageTransform = balloon.transform.Find("YourAdditionalImagePrefabName");
+            if (additionalImageTransform != null)
+            {
+                Destroy(additionalImageTransform.gameObject);
+            }
         }
 
         // T키를 누르면 스캔된 물체 대사 진행 -> 후에 삭제
