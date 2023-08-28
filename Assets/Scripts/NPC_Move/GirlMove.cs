@@ -36,6 +36,7 @@ public class GirlMove : MonoBehaviour
             rend.material.color = c;
             yield return new WaitForSeconds(0.05f);
         }
+        gameObject.SetActive(false);
     }
 
 }
