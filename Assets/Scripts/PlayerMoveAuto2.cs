@@ -28,7 +28,7 @@ public class PlayerMoveAuto2 : MonoBehaviour
 
         if (goUp)   // 올라가기 참이면
         {
-            if(Math.Truncate(transform.position.y) < 4)     // y축 4까지 이동
+            if(Math.Truncate(transform.position.y) < 2)     // y축 4까지 이동
             {
 
                 transform.Translate(new Vector3(0, 0.04f, 0), Space.Self);

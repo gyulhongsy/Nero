@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
@@ -114,6 +115,10 @@ public class DialogueManager : MonoBehaviour
                 //scene 3 : 구슬 합치기
                 case 500:
                     eventManager.combineMarble();
+                    break;
+                // scene 5 : 엔딩 가기
+                case 700:
+                    SceneManager.LoadScene("End");
                     break;
             }
 
