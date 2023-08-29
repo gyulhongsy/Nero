@@ -35,6 +35,8 @@ public class DizzyCatMove2 : MonoBehaviour
         {
             anim.SetBool("isCatRun", true);     // 달리는 애니메이션 시작
             collider.isTrigger = false;
+            AudioSource MEOW = GetComponent<AudioSource>();
+            MEOW.Play();
             //nero.transform.position = new Vector3(21f, -4.5f, 0);
             chaseStart += 1;
             if (transform.position.y >= 0.5f)
@@ -71,6 +73,8 @@ public class DizzyCatMove2 : MonoBehaviour
             {
                 Debug.Log("첫번째 폭탄 펑");
                 neroButtonOn1 = true;
+                AudioSource MEOW = GetComponent<AudioSource>();
+                MEOW.Stop();
             }
         }
 
