@@ -61,7 +61,7 @@ public class PlayerMoveAuto : MonoBehaviour
             }
         }
 
-        if (Math.Truncate(timer) == 11) // 11초 지나면 네로 돌아옴
+        if (Math.Truncate(timer) == 8) // 8초 지나면 네로 돌아옴
         {
             chaseMouse = false;
             comeBack = true;

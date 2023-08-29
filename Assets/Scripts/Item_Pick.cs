@@ -27,20 +27,6 @@ public class Item_Pick : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        if (itemFlag && (Input.touchCount > 0))
-        {
-            AudioSource itempick = GetComponent<AudioSource>();
-            Debug.Log("æ∆¿Ã≈€ø° »πµÊ");
-            //Destroy(gameObject);
-            gameObject.SetActive(false);
-            pick = true;
-            itempick.Play();
-        }
-    }
-
-    //test code
     private void OnMouseDown()
     {
         if (itemFlag)

@@ -34,17 +34,8 @@ public class GetItem : MonoBehaviour
         {
             itemTalk.SetActive(false);
         }
-
-        if (Input.touchCount > 0)
-        {
-            Debug.Log("æ∆¿Ã≈€ »πµÊ");
-            item.SetActive(true);
-            getItem = true;
-            itemTalk.SetActive(false);
-        }
     }
 
-    //test code
     private void OnMouseDown()
     {
         AudioSource itemget = GetComponent<AudioSource>();
