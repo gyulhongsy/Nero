@@ -10,11 +10,11 @@ public class BackgroundMusic : MonoBehaviour
         if (backgroundMusic == null)
         {
             backgroundMusic = this;
-            DontDestroyOnLoad(backgroundMusic);
+            DontDestroyOnLoad(backgroundMusic.gameObject);
         }
         else
         {
-            Destroy(gameObject);
+            Destroy(backgroundMusic.gameObject);
         }
     }
 }
