@@ -26,7 +26,9 @@ public class spaceMove : MonoBehaviour
 
     void Awake()
     {
-        rigid = GetComponent<Rigidbody2D>();    
+        rigid = GetComponent<Rigidbody2D>();
+        AudioSource up = GetComponent<AudioSource>();
+        up.Play();
     }
 
     void Start()
@@ -39,7 +41,8 @@ public class spaceMove : MonoBehaviour
        // h = Input.GetAxisRaw("Horizontal");
        if (manager.isAction == false)
             v = Input.GetAxisRaw("Vertical") + up_Value + down_Value;
-       
+           
+
 
     }
 

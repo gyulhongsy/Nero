@@ -36,7 +36,8 @@ public class DialogueManager : MonoBehaviour
     {
         isAction = true;
         talkPanel.SetActive(true);
-
+        AudioSource textaudio = GetComponent<AudioSource>();
+        textaudio.Play();
         switch (name)
         {
             case "house":

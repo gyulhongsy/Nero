@@ -43,6 +43,8 @@ public class StoreCatMove : MonoBehaviour
         {
             anim.SetBool("isStoreCatRun", true);    // 달리는 애니메이션 시작
             collider.isTrigger = false;     // 충돌 일어나게 함
+            AudioSource MEOW = GetComponent<AudioSource>();
+            MEOW.Play();
             rigid.constraints = RigidbodyConstraints2D.None;    //y축 고정 해제
             rigid.constraints = RigidbodyConstraints2D.FreezeRotation;  // z축 고정
             nero.transform.position = new Vector3(21f, -4.5f, 0);   // 네로 2층으로 이동
@@ -100,6 +102,8 @@ public class StoreCatMove : MonoBehaviour
                 Debug.Log("마지막 폭탄 펑");
                 neroButtonOn = true;    // 폭탄 터짐 참
                 bomb3.SetActive(true);
+                AudioSource MEOW = GetComponent<AudioSource>();
+                MEOW.Stop();
             }
         }
 

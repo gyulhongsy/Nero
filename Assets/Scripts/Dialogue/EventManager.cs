@@ -51,6 +51,7 @@ public class EventManager : MonoBehaviour
     {
         Debug.Log("°¡¹æ È¹µæ");
         bag.SetActive(true);
+       
     }
 
     public void catsCome()

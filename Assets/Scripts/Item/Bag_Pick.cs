@@ -23,6 +23,8 @@ public class Bag_Pick : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Debug.Log("æ∆¿Ã≈€ø° ¥Í¿Ω");
+            AudioSource getbag = GetComponent<AudioSource>();
+            getbag.Play();
             itemFlag = true;
         }
     }
@@ -33,9 +35,12 @@ public class Bag_Pick : MonoBehaviour
         {
             Debug.Log("æ∆¿Ã≈€ø° »πµÊ");
             //Destroy(gameObject);
+
             gameObject.SetActive(false);
             bagButton.SetActive(true);
             pick = true;
+            AudioSource getbag = GetComponent<AudioSource>();
+            getbag.Play();
         }
     }
 
@@ -45,11 +50,15 @@ public class Bag_Pick : MonoBehaviour
         if (itemFlag)
         {
             Debug.Log("æ∆¿Ã≈€ø° »πµÊ");
+            
             //Destroy(gameObject);
             gameObject.SetActive(false);
+           
             pick = true;
             bagButton.SetActive(true);
             itemFlag = false;
+            
+         
         }
     }
 }
