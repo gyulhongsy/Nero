@@ -16,6 +16,7 @@ public class PlayerMove : MonoBehaviour
     public GameObject balloon_text1;
     public GameObject balloon_text2;
     public float jumpPower;
+
     //Mobile key var
     int left_Value;
     int right_Value;
@@ -38,6 +39,11 @@ public class PlayerMove : MonoBehaviour
 
     // 대화창
     public DialogueManager manager;
+
+    Camera mainCamera;
+    RectTransform rectTransform;
+    Vector2 targetPosition;
+    RaycastHit2D hit;
 
     void Awake()
     {
@@ -119,6 +125,15 @@ public class PlayerMove : MonoBehaviour
             anim.SetBool("isWalking", false);
         else
             anim.SetBool("isWalking", true);
+
+        // 명령어 체크
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector2 worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            hit = Physics2D.Raycast(worldPoint, Vector2.zero);
+
+            BoolOnonSelected();
+        }
     }
     void FixedUpdate()
     {
@@ -182,9 +197,11 @@ public class PlayerMove : MonoBehaviour
                     balloon_text2.SetActive(true);
                     balloon_text2.transform.localPosition = new Vector3(scanObject.transform.position.x - 0.5f, balloonPosY, 0f);
                 }
+
+                // btn.GetEvent(scanObject.name);
             }
 
-            Debug.Log("scan : " + scanObject.name);
+            // Debug.Log("scan : " + scanObject.name);
 
 
         }
@@ -204,7 +221,7 @@ public class PlayerMove : MonoBehaviour
             }
         }
 
-        // T키를 누르면 스캔된 물체 대사 진행 -> 후에 삭제
+        /*
         if (Input.GetKeyDown(KeyCode.T))
         {
             if (scanObject != null)
@@ -213,6 +230,7 @@ public class PlayerMove : MonoBehaviour
                 manager.Action(scanObject.name);
             }
         }
+        */
     }
     //Mobile
     public void ButtonDown(string type)
@@ -265,5 +283,14 @@ public class PlayerMove : MonoBehaviour
 
         string nextStageName = nextStageNames[nextStageIndex];
         SceneManager.LoadScene(nextStageName);
+    }
+
+    void BoolOnonSelected()
+    {
+        if (hit.collider != null)
+        {
+            targetPosition = hit.transform.position;
+            manager.Action(scanObject.name);
+        }
     }
 }
