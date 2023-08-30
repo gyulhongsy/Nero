@@ -27,12 +27,14 @@ public class GetItem : MonoBehaviour
             if (getItem == false)
             {
                 itemTalk.SetActive(true);
+                
             }
 
         }
         else
         {
             itemTalk.SetActive(false);
+            
         }
     }
 

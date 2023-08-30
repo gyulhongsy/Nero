@@ -14,6 +14,8 @@ public class EndButton : MonoBehaviour
     public void SceneChangeButton()
     {
         //SceneManager.LoadScene("Chap12");   // 임시 전환. 추후 삭제
+        AudioSource sound2 = GetComponent<AudioSource>();
+        sound2.Play();
         SceneManager.LoadScene("Title");
         Debug.Log("처음으로 이동");
     }
@@ -22,6 +24,9 @@ public class EndButton : MonoBehaviour
     public void ExitButton()
     {
         Application.Quit();
+        AudioSource sound2 = GetComponent<AudioSource>();
+        sound2.Play();
+
         Debug.Log("게임 종료");
     }
 }

@@ -8,6 +8,8 @@ public class TitleScene : MonoBehaviour
     public void SceneChange()
     {
         Debug.Log("¿Ãµø!");
+        AudioSource start = GetComponent<AudioSource>();
+        start.Play();
         SceneManager.LoadScene("NeroHouse");
     }
 }
