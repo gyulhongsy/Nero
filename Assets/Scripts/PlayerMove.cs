@@ -303,11 +303,14 @@ public class PlayerMove : MonoBehaviour
     {
         // Debug.Log(scanObject.name);
 
-        if (hit.collider != null && scanObject.tag != "DizzyCat")
+        if (hit.collider != null || scanObject != null)
         {
-            targetPosition = hit.transform.position;
-            if (hit.collider.tag == "balloon")
-                manager.Action(scanObject.name);
+            if (scanObject.tag != "Dizzy Cat")
+            {
+                targetPosition = hit.transform.position;
+                if (hit.collider.tag == "balloon")
+                    manager.Action(scanObject.name);
+            }
         }
     }
 }

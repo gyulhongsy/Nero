@@ -9,6 +9,7 @@ public class DialogueManager : MonoBehaviour
     public TalkManager talkManager;
     public EventManager eventManager;
 
+    public GameObject MovePanel;
     public GameObject talkPanel;
     public Text talkText;
     public Text talkerText;
@@ -36,6 +37,7 @@ public class DialogueManager : MonoBehaviour
     {
         isAction = true;
         talkPanel.SetActive(true);
+        MovePanel.SetActive(false);
         AudioSource textaudio = GetComponent<AudioSource>();
         textaudio.Play();
         switch (name)
@@ -94,6 +96,7 @@ public class DialogueManager : MonoBehaviour
         if (talkData == null)
         {
             isAction = false;
+            MovePanel.SetActive(true);
 
             switch (id)
             {
