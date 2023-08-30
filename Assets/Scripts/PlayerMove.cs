@@ -189,14 +189,14 @@ public class PlayerMove : MonoBehaviour
 
 
                 // 조건식으로 스캔된 오브젝트에 따라 명령어를 다르게 보여주려고 합니다.
-                if (scanObject.tag == "object" || scanObject.tag == "GetItem") {
+                if (scanObject.tag == "object") {
                     balloon_text1.SetActive(true);
                     balloon_text1.transform.localPosition = new Vector3(scanObject.transform.position.x - 0.5f, balloonPosY, 0f);
                 }
                 if (scanObject.tag == "npc" || scanObject.tag == "StoreCat")
                 {
                     balloon_text2.SetActive(true);
-                    balloon_text2.transform.localPosition = new Vector3(scanObject.transform.position.x - 0.5f, balloonPosY, 0f);
+                    balloon_text2.transform.localPosition = new Vector3(scanObject.transform.position.x - 1f, balloonPosY + 0.25f, 0f);
                 }
                 if (scanObject.tag =="DizzyCat")
                 {
