@@ -12,8 +12,6 @@ public class FadeScript : MonoBehaviour
     public GameObject fadeObj;  // 페이드인/아웃용 오브젝트
 
     float timer = 0;
-    Boolean isFadeIn = false;
-    Boolean isFadeOut = false;
 
     // Start is called before the first frame update
     void Start()
@@ -30,21 +28,19 @@ public class FadeScript : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (Math.Round(timer, 2) == 3)
+/*        if (Math.Round(timer, 2) == 3)
         {
-            isFadeIn = true;
-            StartCoroutine("FadeIn");
-        }
+            StartCoroutine("FadeOut");
+        }*/
 
         if (Math.Round(timer, 2) == 8)
         {
-            isFadeOut = true;
-            StartCoroutine("FadeOut");
+            StartCoroutine("FadeIn");
         }
 
     }
 
-    IEnumerator FadeOut()
+    IEnumerator FadeIn()
     {
         for (float f = 1f; f >= -0.05f; f -= 0.005f)
         {
@@ -55,7 +51,7 @@ public class FadeScript : MonoBehaviour
         }
         fadeObj.SetActive(false);
     }
-    IEnumerator FadeIn()
+    /*IEnumerator FadeOut()
     {
         for (float f = 0.05f; f <= 1; f += 0.005f)
         {
@@ -65,5 +61,5 @@ public class FadeScript : MonoBehaviour
             yield return new WaitForSeconds(0.005f);
         }
 
-    }
+    }*/
 }
