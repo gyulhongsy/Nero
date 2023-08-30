@@ -11,16 +11,31 @@ public class DialogueManager : MonoBehaviour
 
     public GameObject MovePanel;
     public GameObject talkPanel;
+
     public Text talkText;
     public Text talkerText;
     private string talkData;
     private string talkerData;
 
+    /*
+    Image currentImg;
+    public Sprite Nero;
+    public Sprite GrandpaCat;
+    public Sprite BossCat;
+    public Sprite Cat1;
+    public Sprite Cat2;
+    */
     public bool isAction;
     public int talkIndex;
 
     Coroutine typingCoroutine;
 
+    /*
+    void Start()
+    {
+        currentImg = GetComponent<Image>();
+    }
+    */
     void Update()
     {
         if (isAction)
