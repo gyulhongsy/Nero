@@ -290,7 +290,8 @@ public class PlayerMove : MonoBehaviour
         if (hit.collider != null)
         {
             targetPosition = hit.transform.position;
-            manager.Action(scanObject.name);
+            if (hit.collider.tag == "balloon")
+                manager.Action(scanObject.name);
         }
     }
 }
