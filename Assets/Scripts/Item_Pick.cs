@@ -23,7 +23,9 @@ public class Item_Pick : MonoBehaviour
         {
             Debug.Log("아이템에 닿음");
             itemFlag = true;
-            
+            AudioSource itemget = GetComponent<AudioSource>();
+            itemget.Play();
+
         }
     }
 
