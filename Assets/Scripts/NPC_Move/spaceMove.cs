@@ -38,29 +38,32 @@ public class spaceMove : MonoBehaviour
     
     void Update()
     {
-       // h = Input.GetAxisRaw("Horizontal");
-       if (manager.isAction == false)
+        // h = Input.GetAxisRaw("Horizontal");
+
+        // 대화 중일때 이동 금지
+        if (manager.isAction == false)
             v = Input.GetAxisRaw("Vertical") + up_Value + down_Value;
-           
-
-
     }
 
 
     void FixedUpdate()
     {
-        if (transform.position.x < 57)  //네로 오른쪽 이동
+        // 대화 중일때 이동 금지
+        if (manager.isAction == false)
         {
-            rigid.velocity = new Vector2(0.8f, v) * speed;   
-            if(transform.position.x > 54)
+            if (transform.position.x < 57)  //네로 오른쪽 이동
             {
-                canvas.SetActive(false);
+                rigid.velocity = new Vector2(0.8f, v) * speed;
+                if (transform.position.x > 54)
+                {
+                    canvas.SetActive(false);
+                }
             }
-        }
-        else  // 네로 멈춤
-        {
-            rigid.velocity = new Vector2(0, v);
-            SceneManager.LoadScene("CatPlanet");
+            else  // 네로 멈춤
+            {
+                rigid.velocity = new Vector2(0, v);
+                SceneManager.LoadScene("CatPlanet");
+            }
         }
 
     }
