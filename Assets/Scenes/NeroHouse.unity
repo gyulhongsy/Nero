@@ -947,7 +947,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.21875, y: 2.2109375}
+    oldSize: {x: 2.7466667, y: 1.8866667}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5462,7 +5462,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.21875, y: 2.2109375}
+    oldSize: {x: 2.7466667, y: 1.8866667}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -5486,7 +5486,7 @@ GameObject:
   - component: {fileID: 984498037}
   m_Layer: 3
   m_Name: cats event
-  m_TagString: Untagged
+  m_TagString: npc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7097,7 +7097,7 @@ GameObject:
   - component: {fileID: 1532031369}
   m_Layer: 3
   m_Name: box
-  m_TagString: Untagged
+  m_TagString: object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7485,7 +7485,7 @@ GameObject:
   - component: {fileID: 1775593321}
   m_Layer: 3
   m_Name: house
-  m_TagString: Untagged
+  m_TagString: object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8463,7 +8463,7 @@ GameObject:
   - component: {fileID: 2001923115}
   m_Layer: 3
   m_Name: grandpaCat
-  m_TagString: Untagged
+  m_TagString: npc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

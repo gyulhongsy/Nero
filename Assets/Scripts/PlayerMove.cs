@@ -174,7 +174,7 @@ public class PlayerMove : MonoBehaviour
             scanObject = rayHitDetect.collider.gameObject;
 
             // 해당하는 명령어가 보이게 작성해주시면 됩니다
-            balloon.SetActive(true);
+            //balloon.SetActive(true);
 
             Collider2D scanObjectCollider = scanObject.GetComponent<Collider2D>();
 
@@ -184,25 +184,35 @@ public class PlayerMove : MonoBehaviour
                 float yOffset = 0.5f; // 말풍선이 오브젝트 위에 떠 있는 높이
                 float balloonPosY = scanObjectCollider.bounds.max.y + yOffset;
 
+                // 말풍선의 위치를 설정
+                // balloon.transform.position = new Vector3(scanObject.transform.position.x - 0.5f, balloonPosY, 0f);
 
 
                 // 조건식으로 스캔된 오브젝트에 따라 명령어를 다르게 보여주려고 합니다.
-                if (scanObject.name == "house" || scanObject.name == "box")
-                {
-                    // 말풍선의 위치를 설정
-                    balloon.transform.position = new Vector3(scanObject.transform.position.x - 0.5f, balloonPosY, 0f);
+                if (scanObject.tag == "object" || scanObject.tag == "GetItem") {
                     balloon_text1.SetActive(true);
                     balloon_text1.transform.localPosition = new Vector3(scanObject.transform.position.x - 0.5f, balloonPosY, 0f);
                 }
-                else
+                if (scanObject.tag == "npc" || scanObject.tag == "StoreCat")
                 {
-                    // 말풍선의 위치를 설정
-                    balloon.transform.position = new Vector3(scanObject.transform.position.x - 1f, balloonPosY + 0.25f, 0f);
                     balloon_text2.SetActive(true);
-                    balloon_text2.transform.localPosition = new Vector3(scanObject.transform.position.x - 1f, balloonPosY + 0.25f, 0f);
+                    balloon_text2.transform.localPosition = new Vector3(scanObject.transform.position.x - 0.5f, balloonPosY, 0f);
                 }
+                if (scanObject.tag =="DizzyCat")
+                {
+                    // 물체가 감지되지 않을 때 말풍선을 비활성화하고 추가 이미지도 제거
+                    balloon.SetActive(false);
+                    balloon_text1.SetActive(false);
+                    balloon_text2.SetActive(false);
+                    scanObject = null;
 
-                // btn.GetEvent(scanObject.name);
+                    // 추가 이미지 오브젝트가 있다면 제거
+                    Transform additionalImageTransform = balloon.transform.Find("YourAdditionalImagePrefabName");
+                    if (additionalImageTransform != null)
+                    {
+                        Destroy(additionalImageTransform.gameObject);
+                    }
+                }
             }
 
             // Debug.Log("scan : " + scanObject.name);
@@ -291,7 +301,9 @@ public class PlayerMove : MonoBehaviour
 
     void BoolOnonSelected()
     {
-        if (hit.collider != null)
+        // Debug.Log(scanObject.name);
+
+        if (hit.collider != null && scanObject.tag != "DizzyCat")
         {
             targetPosition = hit.transform.position;
             if (hit.collider.tag == "balloon")

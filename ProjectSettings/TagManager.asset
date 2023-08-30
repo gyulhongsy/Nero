@@ -9,6 +9,10 @@ TagManager:
   - GetItem
   - warmHole
   - balloon
+  - DizzyCat
+  - StoreCat
+  - npc
+  - object
   layers:
   - Default
   - TransparentFX
