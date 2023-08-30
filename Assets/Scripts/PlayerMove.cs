@@ -303,7 +303,7 @@ public class PlayerMove : MonoBehaviour
     {
         // Debug.Log(scanObject.name);
 
-        if (hit.collider != null || scanObject != null)
+        if (hit.collider != null && scanObject != null)
         {
             if (scanObject.tag != "Dizzy Cat")
             {
