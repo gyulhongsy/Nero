@@ -22,7 +22,7 @@ public class BirdMove : MonoBehaviour
         {
             if (transform.position.x < 40)
             {
-                transform.Translate(new Vector3(0.02f, 0.02f, 0), Space.Self);
+                transform.Translate(new Vector3(0.1f, 0.1f, 0), Space.Self);
                 anim.SetBool("isBirdFlying", true);
                
             }
