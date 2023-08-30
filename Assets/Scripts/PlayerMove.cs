@@ -184,18 +184,22 @@ public class PlayerMove : MonoBehaviour
                 float yOffset = 0.5f; // 말풍선이 오브젝트 위에 떠 있는 높이
                 float balloonPosY = scanObjectCollider.bounds.max.y + yOffset;
 
-                // 말풍선의 위치를 설정
-                balloon.transform.position = new Vector3(scanObject.transform.position.x - 0.5f, balloonPosY, 0f);
 
 
                 // 조건식으로 스캔된 오브젝트에 따라 명령어를 다르게 보여주려고 합니다.
-                if (scanObject.name == "house" || scanObject.name == "box") {
+                if (scanObject.name == "house" || scanObject.name == "box")
+                {
+                    // 말풍선의 위치를 설정
+                    balloon.transform.position = new Vector3(scanObject.transform.position.x - 0.5f, balloonPosY, 0f);
                     balloon_text1.SetActive(true);
                     balloon_text1.transform.localPosition = new Vector3(scanObject.transform.position.x - 0.5f, balloonPosY, 0f);
                 }
-                else {
+                else
+                {
+                    // 말풍선의 위치를 설정
+                    balloon.transform.position = new Vector3(scanObject.transform.position.x - 1f, balloonPosY + 0.25f, 0f);
                     balloon_text2.SetActive(true);
-                    balloon_text2.transform.localPosition = new Vector3(scanObject.transform.position.x - 0.5f, balloonPosY, 0f);
+                    balloon_text2.transform.localPosition = new Vector3(scanObject.transform.position.x - 1f, balloonPosY + 0.25f, 0f);
                 }
 
                 // btn.GetEvent(scanObject.name);
